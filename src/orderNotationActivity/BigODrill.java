@@ -15,7 +15,7 @@ public class BigODrill {
      */
     public static int constantTime(int[] numArr) {
         //TODO: Add the code that returns the last element of the input array with O(1) run time
-        return 0; // Placeholder to make it compile. Replace me with the correct value.
+        return numArr[numArr.length-1]; // Placeholder to make it compile. Replace me with the correct value.
     }
 
 
@@ -26,6 +26,9 @@ public class BigODrill {
      * @return the input array where each element of the array is multiplied with itself
      */
     public static int[] linearTime(int[] numArr) {
+        for (int index = 0; index < numArr.length; index++) {
+            numArr[index] *= numArr[index];
+        }
         //TODO: Add the code to modify and return the input array with each element squared
         // which performs in O(n)
 
