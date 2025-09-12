@@ -38,10 +38,13 @@ public class BigODrill {
     /**
      * (3)
      * Demonstrates an algorithm with TODO: What is O( ? ) of the following code?
+     * ******** O(n)
      * @param numArr - an integer array
      */
     public static int[] puzzle03(int[] numArr) {
         //TODO: What does the following code do?
+        //this code creates a nwe array using values with indices of powers of 2
+        //from the original array numArr
         int index2 = 0;
         int[] tempArr = new int[numArr.length];
         for(int index = 1; index < numArr.length; index = index * 2) {
@@ -54,13 +57,20 @@ public class BigODrill {
     /**
      * (4)
      * Demonstrates an algorithm with TODO: What is the O( ? ) of the following code?
+     * O(n)
      * @param numArr -  a two dimensional rectangular integer array a.k.a 2D matrix
      * @return a double that represents the sparsity of numArr
      */
     public static double sparsity(int[][] numArr) {
-        //TODO: Write the code that calculates and returns the sparsity of the input
-        // rectangular integer array numArr
-        return 0; // Placeholder to make it compile.
+        int count = 0;
+        for (int i = 0; i < numArr.length; i++) {
+            for (int j = 0; j < numArr[i].length; j++) {
+                if(numArr[i][j] == 0){
+                    count++;
+                }
+            }
+        }
+        return (double) count/(numArr.length * numArr[0].length); // Placeholder to make it compile.
 
     }
 
@@ -83,7 +93,12 @@ public class BigODrill {
 
 
     public static void main (String[] args){
-        //TODO: Write code to run your methods
+        int[] numArr = new int[10];
+        int[][] twoArr = new int[10][10];
+        constantTime(numArr);
+        linearTime(numArr);
+        puzzle03(numArr);
+        sparsity(twoArr);
 
     }
 }
